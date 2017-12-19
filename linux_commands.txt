@@ -6,6 +6,7 @@ clear = clear means your terminal will but when you scroll up i will see
 > = redirectional operator to save the outputs
 man = manual for all tools eg: man ls 
 v =  verbose extended information 
+--help = Display help in that sessions
 
 ls command
 ls = list all files in the directory
