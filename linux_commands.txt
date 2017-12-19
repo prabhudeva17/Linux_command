@@ -1,0 +1,442 @@
+pwd = present working directory 
+cd = change directory 
+ls = list all the file and directory in the present working directory
+clear = clear means your terminal will but when you scroll up i will see
+* = wildcard
+> = redirectional operator to save the outputs
+man = manual for all tools eg: man ls 
+v =  verbose extended information 
+
+ls command
+ls = list all files in the directory
+ls Downloads = we can give specify directory to list all the files
+ls /home/folder/ = we can give specify directory to list all the files
+ls .. =  1 step back  and list the files
+ls ../.. = 2 step back and list the files
+ls -l = list all files in longer format details about content
+ls -a = this will show you the hidden files also
+ls -al = list hidden files and long list
+ls -lS = long list with sorting from big to small
+ls *.html = list only the file with .html extension
+ls *.* = list all the files and all the extensions
+ls -lS > output.txt = output the list in to file and save it
+ls -d */ = list out only the directories
+ls -R = list the directory in hierarchy tree	
+
+cd command 
+change the current working directory
+cd / = root directory
+cd ~ = home directory by default we have this when open terminal
+cd .. = change directory to 1 step back 
+cd ../.. = change directory to 2 step back
+cd my books = we cannot go this directory it has space in between 
+we have 3 option
+  1 cd my\ books      
+  2 cd "my books" 	
+  3 cd 'my books'
+cd Documents/"my books"/ = to get in to my books folder
+
+Path 2 type 
+1 Absolute path cd /home/user/Desktop/  full path
+2 Relative Path cd Desktop	custom path directing to the destination
+
+cat command 
+cat it has 3 function with text file 
+	1 display text file
+	2 combining copy of text file 
+	3 create text file
+cat option file1 file2 ......
+type cat to enter in to cat editor press ctrl+d to exit
+cat file.txt = display me the content of the file
+cat file1.txt file2.txt = display the two file in order in a single screen
+cat -b file.txt = add line number to the content expect blank line 
+cat -n file.txt = add line number to all inculding  blank line 
+cat -s file.txt = display all context with same space
+cat -E file.txt = add $ symbol at the end of each line	
+> = redirection operator
+output > file = send output to the file
+cat > test.txt
+press enter then what ever you enter in the terminal are get saved in the test.txt
+press ctrl+d to exit the cat editor
+> = single operator will overwrite the file
+>> = do not overwrite the file continue with the previous data
+cat file1.txt file2.txt > file3.txt = saving the dat of two file into single file
+cat file1.txt >> file2.txt = copying file1 data to the existing file2
+
+mkdir command 
+create directory in linux
+mkdir folder = create folder directory
+mkdir folder/folder1 = create sub directory inside directory only created when parent directory folder exist if not it makes an error (or)
+mkdir -p folder/folder1 = mention it has parent directory then it can create the sub-directory
+mkdir -p folder/{john,paul,sam} = crerate 3 sub-directory under folder directory
+
+rmdir and rm comand
+remove directory and remove
+rmdir -options dir = usage
+rmdir folder = remove the folder directory
+rmdir a/b/c/d/e = to doesn't remove the whole directory it remove only the last directory
+rmdir -p a/b/c/d/e = to remove all the directory
+rmdir -pv a/b/c/d/e = remove and display short verbose information
+rmdir -p a/b/c/d/e = if the directory contain file we cannot remove it type (below to remove)
+rm -p -r a/b/c/d/e = remove all the files and directory -r is for recurrsive
+
+cp command
+cp option source destination
+cp file1.txt file2.txt = create a new file2 and copy the content of file1
+cp file1.txt folder = copy the file1 in to the folder
+cp file1 file2 file3 directory = copy multiple files inside folder
+cp -i file1 folder = to avoid overwritting with yes or no feature i =inetractive mode
+cp ../file1 . = go one step back and copy "." is the current directory  
+cp /home/user/file . = absolute path copy to current path "."
+cp dir1 dir3 = if dir3 is not exist it returns error we use -R 	
+cp -R dir1 dir3 = recursive copying
+cp -vR dir1 dir3 = verbose small details abot copying process
+
+mv command
+mv options source destination
+mv file1  file2 = change name of the file but file2 cannot exits already
+mv file1 dir = move file inside directory
+mv -i file1 folder = if the file1 is alredy contained in folder then  it will overwrite the content for that it ask our option by i flag interactive mode
+mv dir1 dir2 = mv dir1 inside dir2
+mv dir2 dir3 = if di3 is not exist it rename the dir2 with dir3
+mn -v file.txt dir1 = give explanation of what is process using verbose
+less command
+less command to read or search through the big  file
+less file.txt
+hit down arrow key to go down 1 line and up for 1 line up
+space button to browser next page
+capital B to go up one page
+capital G to go end of the file
+1G 1 capital G to go to top of the file 
+or small g for top capital G for down good practice
+/book = it will search from up to down in that file with book key word
+n = to go to the next item for the searched word
+?book = it will search from down to up 
+q = quit your less command
+
+touch command 
+easiest way to create new empty file it is also to change existing time stamp of the file
+ls -l = list file with complete details
+touch file.txt = create file.txt 
+touch file.txt = if file.txt is already exist it will update the time stamp of the file
+
+nano command
+is small friendly text editor , interactive search , go to line, indention
+nano file.txt = it will open the file in terminal 
+ctrl+o = write out for saving the content and press enter to save the file
+ctrl+g = help 
+crtl+x = exit the nano command
+nano file.txt = if file is already created it will open for nano text editor
+
+top command
+to see which program  or process is running  provide dynamic running process in real time
+by default it refresh every  3 seconds
+PID = process ID
+press "s" in that terminal 10 change the refreshing seconds to 10 sec
+press "i" this allow you to filter idle process once again press "i" to see full process (also give the overview of running process)
+press "k" to kill the press using its PID and press "enter" to kill the process
+
+kill command
+to kill process in linux
+kill -flags PID
+i need to know the PID of the process to kill it
+pidof "name of process" like pidof unity-control-center = you get the process id of that
+kill PID like kill 3256 = to kill that process
+PID will change if you close that process and restart that it dynamical change the process
+kill -KILL 3267 = force the process to kill force stop 
+kill -9 3267 = very powerful command to kill the process sick kill
+ps -ux = find out the list of running process and PID of that by the Name (long list of all running process)
+ps -aux = to see the process which is run by all the user 
+ps -U username = to see the process is running by that user
+ps -C gnome-terminal = list out all the instance possible of this program 
+
+echo command
+echo is used to print the text 
+echo hello world = it echo the word hello world are all text you written after echo keyword
+echo "hello world" = it is better to use double quotes around your text 
+variable="mark" = using value to save variable
+echo $variable = it display the value of that variable
+this variable is validate for this session of that terminal when you close that it will gone
+x=10
+echo "the value of x is $x"  = echo the value of x is 10
+echo -e = escape sequence 
+echo -e "prabhu \t deva" = print prabhu 	deva
+echo -e "prabhu \n deva" = prabhu prabhu 
+									deva
+
+file permission in linux and symbolic permission
+ls -l = long listing
+-rw-rw-r-- = permission for the file in three group 
+- = for normal file
+d = directory file
+c = character special file
+b =binary special file
+-rw-rw-r-- 1 name_of_owner name_of_group 22(size_of_file) jul 23 18:55 file_name
+three elements are  
+	-rw-	owner
+	-rw-	group
+	-r--	other user
+	1 = symbolic links of the file 
+
+drwx d =directory r =read w =write x =execute  = permission for file
+
+chmod =change the permission of the file 
+
+for others (user)
+chmod o+x name_of_file = "o" for other "+" for add "x" for excute permission
+chmod o-x name_of_file = "o" for other "-" for remove "x" for excute permission
+chmod o+w name_of_file = "o" for other "+" for add "e" for write permission	
+
+for groups
+chmod g+x name_of_file = "g" for other "+" for add "x" for excute permission
+chmod g-x name_of_file = "g" for other "-" for add "x" for excute permission chmod
+
+for all
+chmod ugo=rwx name_of_file = "u" for user,owner "g"-group,"o"-others = everybody have RWX permission
+chmod ugo-rwx name_of_file = remove all the permission for everybody (or) chmod a-rwx name_of_file = "a" for all
+chmod uu+rw,g+rw,o+r name_of_file = to permission for multiple user in single line
+
+permission of directory in chmod
+ls -ld directory_name = to long list the targeted directory
+drwxrwxr-x =permission for the directory
+
+write permission
+chmod u-w dir_name = remove the write permission for the directory (permission denied for writing inside the directory but we can see and execute)
+
+read permission
+chmod u-r dir-name = denied the read permission to the user (cannot read the content inside the dir "ls" not work)
+
+execute permission
+chmod u-x dir_name = denied execute permission to the user (cannot go into the directory cannot go inside and execute you dont have the permission to see the permission in ls -l dir_name)
+
+octal and numerical permission files in linux
+octal permission is numerical representation of file permission
+user 			groups 			others
+(4 2 1)			(4 2 1)			(4 2 1)
+ r w x 			 r w x 			 r w x
+ 1 1 1 	    	 	 1 1 1 			 1 1 1 
+ 4+2+1=7		   7			   7
+
+value is RWX permission is 7
+
+R,W,X table 
+r,w,x 			binary 		Octal
+permission 	
+---			000		0
+--x 			001 		1
+-w- 			010		2
+-wx			011		3
+r-- 			100		4
+r-w 			101		5
+rw- 			110 		6
+rwx 			111		7
+
+chmod 000 file.txt 
+1st 0 for user
+2nd 0 for group
+3rd 0 for others
+total no r,w,x, permission for all 
+chmod 751 file.txt
+1st 7 for user to r,w,x
+2nd 5 for group to r,x
+3rd 1 for others to r
+
+which & whatis command
+which command is used to return the path name of the file or a command known the location of that file or app
+which ls = location of this ls or wherever it execute
+which firefox = location of firefox installed
+whatis command is going to display short manually page description
+whatis ls = give short description of ls command
+
+useradd command
+sudo useradd username -m -s /bin/bash -g users -c "comments" 
+"m" is to home directory for this user "s" for default shell allow user to access shell "g" for default user flag for users group "c" to provide comments "G" for giving user defined group
+
+ls /home/ = to check new user is created or not
+sudo passwd = to change or set password for the root user
+sudo passwd username = to set password for that user 
+
+userdel command
+ls /home/ = to see users present in that system
+sudo usedel username = to delete user but home directory and is work file is not deleted
+it only delete the login credential of that user 
+sudo userdel -r username = to delete completely the user from the system 
+
+basic group management (grops,groupadd,groupdel)
+groups command = to show which are the groups that current user is connected
+cat /etc/group = show all the group which are in the system
+groupadd command
+sudo groupadd java = to add java in the etc/group list i can add many group in the same way
+sudo groupdel java = to delete java group from the list
+assign user to particular group
+sudo gpasswd -a username_to_add_to_group name_of_the_group = to add user to particular group
+cat /etc/group = to check that user is added or not 
+sudo gpasswd -d username_to_del_to_group name_of_the_group = to del user to particular group
+
+bashrc file
+bashrc file is script executed whenever a new terminal section is started in an interactive mode 
+editing the bashrc file we can change the terminal 
+customize bashrc file to change the color of the terminal
+
+viewing resources (df,du,free command)
+
+df command
+df = report the amount of available disk space being used by file system
+df -h = readable in more convenient way
+
+du command
+du = estimate and display the disk space used by files
+cd Downloads = to go to Downloads directory and see their disk space
+du = gives the output in not convenient way
+du -h = human readable form in more convenient way 
+du -sh = to display "s" for summary "h" for human readable
+
+free command
+free command display the total amount free and used physcial and swap memory in thwe system as well as the buffer used by the kernal
+free = use to display free used shared buffers space in system
+free -h = to display in human readable format
+free -m = display in megabyte size "b,m,g,te" foe byte,megabyte,gigabyte,terabyte 
+
+watch command
+which can run script or command at regular interval or repeatedly
+watch free -m = it refresh the command for every two seconds 
+watch -n 1 free -m = it refresh the command for every one seconds
+watch -n 1 free -m = it refresh the command for every one seconds
+watch -n 0,5 free -m = it refresh the command for every .5 seconds
+watch can be used with any command or with any script
+
+head and tail commands
+use with files the head and tail actually the opposite of each other
+head file = head command is display first 10 lines of the file 
+tail file = tail command is display last 10 lines of the file
+head -n3 file = to display first 3 lines 
+tail -n3 file = to display last 3 lines 
+tail -f file = "f" for follow if to find the last line of changing files like a wordlist in crunch it update the terminal and displays the last lines (append lines of code)
+head file1 file2 file3 = it display multiple file with 1st 10 lines
+
+find command
+is used to search for files in directory hierarchy
+find /home/user -name test.txt = find the file test.txt in /home/user path
+find /home/user -name test.* = if you do not the file extension simply type ".*" to display the file with all possible extension
+find /home/user -name *.txt = if you known the file type but not known its extension it will show all files with .txt extension
+find / -name file = it will search for the file in the root directory but some files are omitted due to less user permission in that case use sudo find / -name file  for full user permission and find the file
+find /home/user -mtime -1 = if you do not know the file name and path were it is saved but you know the date when it is created we can get it by "-mtime "  option "-1" for 1 day before it search for the created file before one day 
+
+wc command
+word count  prints or count of a new line words and bits for each input file number of lines in file words in the file
+wc file.txt = it start counts the line of lines words and character used in file like (1, 6, 42)=(lines,words,character) 
+wc -c file.txt = print number of character or number of bits
+wc -l file.txt = count number of lines
+wc -w file.txt = count number of words
+wc -L file.txt = print lengthof the longest line number of character
+
+cal command
+cal used to display conversion formated calendar in command line
+cal = to display the calendar in the command line 
+ncal = display the weeks in opposite to normal way
+cal 2016 = it will show all the month of that year
+cal 5 2017 = it will show may month 2017 year only "5" for may 
+cal -1 = is our default month current month
+cal -3 = will display 3 months like past month,present month,future month
+
+date command
+is used to print out or change the value of system time and date information
+date = display the current date and time 
+date -s "12/20/2016 12:48:00" = to change the date and time
+
+format 			what is specifies
++%m 			specifies the month number
++%h 			specifies the abbreviated month(jan-dec)
++%B 			specifies the full month name
++%d 			specifies the day of the month
++%y 			specifies the year
++%H,+%M,+%S 		specifies the hour,minute,seconds
++%D 			specifies the date as mm/dd/yy
++%T 	 		specifies the time as hh:mm:ss
+
+date +%d/%m/%y = displays 30/11/1997
+date "+date: %m/%d/%y%ntime: %H:%M:%S" = to display in 
+date: 01/04/17
+time: 22:25:13
+
+How to run multiple terminal commands
+; = combine commands we an combine n number of commands
+ls ; pwd 
+date ; cal ; pwd = excute all 3 command
+date ; CAL ; pwd = if one command fails it will only left off other than else will excute
+
+&& = double iampercent
+ls && pwd && data && cal 
+the difference between ; and && are
+CAL ; date = CAL command failed date is execute
+CAL && date = CAL command failed data is not executed it skip is first command fails
+
+|| = or command
+ls || pwd = only one command is executed if first command is true second command is skipped else if first command is false it checks for second command
+
+apt command
+apt-get command to install,remove,manage for debian based linux
+apt = Advanced Packaging Tool
+sudo = superuser do
+sudo apt-get update = re-synchronize  your local index of package files, this package are saved in file in /etc/apt/sources.list
+sudo apt-get install vlc = command to install vlc	
+sudo apt-get remove vlc  = to just remove the vlc only but its data files remains same
+sudo apt-get remove --purse vlc = remove all the config file of vlc and delete it completely
+sudo apt-get autoremove = remove packages dependencies that are now no longer needed
+
+ifconfig command
+interface configuration use to view and change the configuration of network interface
+ifconfig = to display network interface
+ifconfig eth0 = to display specific interface
+ifconfig eth0 down = disable internet connection 
+ifconfig eth0 up = enable internet connection
+
+tar command
+tar command to compress and extract files
+tar stands for Tape Archive
+tar -cvf name_of_file_to _compress = "c" for create an archive "v" for verbose "f" allow for specify the file name
+tar -xvf name_of_file_to _extract = "x" extract the file "v" for verbose "f" allow for specify the file name
+.tar.gz or .tgz
+tar -czvf name_of_file_to _compress = "c" for create an archive "v" for verbose "f" allow for specify the file name "z" for create the gz format
+tar -xzvf name_of_file_to _extract = "x" extract the file "v" for verbose "f" allow for specify the file name "z" for extract the gz format
+
+grep command
+grep stands for Global regular Expression print process text line by line 
+and print any line that matches the pattern grep command can used to search some kind of pattern or word in a text 
+grep "word_i_want_to_search" filename.txt 
+grep "options" file.txt = search and display  the word options in the terminal (case sensitive)
+grep -i "options" file.txt = search and display  the word options in the terminal (case insensitive)
+grep -n "options" file.txt = search and display  the word options in the terminal (case sensitive) with its line number
+grep -n "some options" file.txt = search and display  the words some options in the terminal (case sensitive) with its line number
+grep -n "options" file1.txt file2.txt file3.txt = search the multiple files and display  the word options in the terminal (case sensitive) with its line number
+grep -v "some option" file.txt = display all expect the given word (inverted)
+
+pipe command = |
+pipe is a form of redirection to send output of one program to another program for further processing
+command_1 | command_2 | command_3 and so on to n 
+dmesg | less = execute the output of first command in second command
+
+netstat command
+netstat stands for Network Statistics
+use to display network connection and routing table and network interface also network protocol
+netstat -a = show all the connection which are available in your system which are TCP/UDP
+netstat -a | less = display output with less command
+netstat -at | less = display tcp connection only
+netstat -au | less = display udp connection only
+netstat -l | less = listening ports and connection 
+netstat -lt | less = listening ports and connection with tcp
+netstat -lu | less = listening ports and connection  with udp
+netstat -s | less = "s" for statistics about data packets 
+netstat -st | less = "s" for statistics about tcp data packets
+netstat -su | less = "s" for statistics about udp data packets
+netstat -p | less = PID of program name 
+netstat -n | less = numeric ports which are used by the interface
+netstat -c | less = is used to show network statistic continues by refreshing
+netstat -i  = "i" for interface 
+netstat -ie = "e" for extended interface display the same as ifconfig
+netstat -a | grep ":80" = second command is implement on the first command output this is use of pip command
+
+
+
+
+
