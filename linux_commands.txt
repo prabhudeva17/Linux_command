@@ -437,6 +437,6 @@ netstat -ie = "e" for extended interface display the same as ifconfig
 netstat -a | grep ":80" = second command is implement on the first command output this is use of pip command
 
 
-
+--------------------------===========------------------------
 
 
